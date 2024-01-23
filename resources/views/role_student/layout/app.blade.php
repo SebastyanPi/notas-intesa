@@ -1,5 +1,5 @@
 @php
-    $URL = 'http://127.0.0.1:8000/';
+     $URL = env('APP_URL');
 @endphp
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@
     @auth
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary bg-white">
             <div class="container-fluid">
-            <img src="http://127.0.0.1:8000/img/intesa.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top ">
+            <img src="{{ $URL }}/img/intesa.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top ">
             <a class="navbar-brand ml-4" href="#"><b>Intesa - Notas</b></a>
             
             <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

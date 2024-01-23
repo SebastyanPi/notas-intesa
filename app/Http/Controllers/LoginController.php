@@ -35,11 +35,10 @@ class LoginController extends Controller
                 array_push($roles,$value);
             }
 
-            notify()->success('Bienvenido a la Plataforma Institucional', 'Hola!');
-
             switch ($request->role) {
                 case 'Estudiante':
                     if(in_array('Estudiante', $roles)){
+                        
                         return redirect()->route('page_student.index');
                     }else{
                         Auth::logout();
@@ -63,6 +62,7 @@ class LoginController extends Controller
                 case 'Administrador':
                   
                     if(in_array('Administrador', $roles)){
+                        notify()->success('Bienvenido a la Plataforma Institucional', 'Hola!');
                         return redirect()->route('program.index');
                     }else{
                         Auth::logout();

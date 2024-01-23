@@ -179,7 +179,7 @@
         <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('http://127.0.0.1:8000/img/intesae1.jfif');
                       background-size: cover;">
         <span class="mask bg-gradient-primary opacity-1"></span>
-        <h4 class="mt-5 text-white font-weight-bolder position-relative">"Karen Ospino"</h4>
+        <h4 class="mt-5 text-white font-weight-bolder position-relative">"Egresada"</h4>
         <p class="text-white position-relative"> <small>
             Me gusta estudiar en INTESA porque hay matricula abiertas todo el tiempo.    
         </small></p>

@@ -34,7 +34,7 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
-        $ModuleXPogram = Module::where('name',$request->name)->where('program_id', $request->program_id)->get();
+        $ModuleXPogram = Module::where('name',$request->name)->where('program_id', $request->program_id)->where('user_id', $request->user_id)->get();
         if($ModuleXPogram->count() == 0){
             $request->validate([
                 'name' => ['required','min:5']
@@ -43,6 +43,7 @@ class ModuleController extends Controller
             Module::create([
                 'name' => $request->name,
                 'program_id' => $request->program_id,
+                'user_id' => $request->user_id
             ]);
             return back()->with('success', 'Creado Correctamente!');
         }else{
@@ -81,12 +82,16 @@ class ModuleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => ['required','min:5','unique:modules,name']
-        ]);
-        $module = Module::where('id', $id)->first();
-        $module->name = $request->name;
-        $module->save();
+        $modules = Module::where('name', $request->name)->where('user_id', $request->user_id)->get();
+        if(count($modules) == 0){
+            $request->validate([
+                'name' => ['required','min:5']
+            ]);
+            $module = Module::where('id', $id)->first();
+            $module->name = $request->name;
+            $module->user_id = $request->user_id;
+            $module->save();
+        }
         return back()->with('success', 'Actualizado Correctamente!');
     }
 

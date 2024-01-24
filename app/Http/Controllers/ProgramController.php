@@ -139,7 +139,8 @@ class ProgramController extends Controller
     public function show($id)
     {
         $program = Program::find($id);
-        return view('pages.program.view', compact('program'));
+        $teacher = User::role('Profesor')->get();
+        return view('pages.program.view', compact('program','teacher'));
     }
 
     public function groups($id){

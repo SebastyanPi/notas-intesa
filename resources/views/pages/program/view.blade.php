@@ -48,17 +48,36 @@
                                     $y++;
                                 @endphp
                                     <li class="list-group-item  justify-content-between align-items-center">
+
+                                      <p><b>Modulo No.{{ $y }} </b></p>
                                         
                                         <form class="row g-3" method="POST" action={{ route('module.update', $modulo->id) }}>
                                             @csrf
 
-                                          <div class="col-md-6">
+                                          <div class="col-md-5">
                                             <div class="input-group mb-3">
-                                              <span class="input-group-text" id="basic-addon1">Modulo #{{ $y }} </span>
+                        
                                               <input class="form-control text-center" name="name" type="text" value="{{ $modulo->name }}" >
                                             </div>
                                           </div>
-                                            <div class="col-md-4">
+                                          <div class="col-md-5">
+                                            <div class="input-group mb-3">
+                                              <!--<span class="input-group-text" id="basic-addon1">Profesor </span>-->
+
+                                              <select class="form-control" name="user_id" id="">
+                                                <option @if ($modulo->user_id == 1)
+                                                  selected class="text-danger"
+                                              @endif value="1">Administrativo Intesa</option>
+                                                @foreach ($teacher as $item)
+                                                    <option @if ($item->id == $modulo->user_id)
+                                                        selected class="text-danger"
+                                                    @endif value="{{ $item->id }}">{{ $item->names() }}</option>
+                                                @endforeach
+                                              </select>
+
+                                            </div>
+                                          </div>
+                                            <div class="col-md-2">
                                               <button type="submit" class="btn-n btn-n-primary-outline mb-3"><i class="fas fa-save"></i></button>
                                               @if (count($modulo->qualifications) == 0)
                                               <button data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $modulo->id  }}" type="button" class="btn-n btn-n-danger-outline mb-3"><i class="fas fa-trash"></i></button>
@@ -125,6 +144,16 @@
                     <label for="exampleFormControlInput1">Nombre</label>
                     <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="">
                   </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Profesor</label>
+                    <select class="form-control" name="user_id" id="">
+                      <option value="1">Administrativo Intesa</option>
+                      @foreach ($teacher as $item)
+                          <option value="{{ $item->id }}">{{ $item->names() }}</option>
+                      @endforeach
+                    </select>
+                </div>
                 <div class="form-group d-none">
                     <label for="exampleFormControlInput1">Codigo programa</label>
                     <input type="text" name="program_id" value="{{ $program->id }}" class="form-control" id="exampleFormControlInput1" placeholder="">

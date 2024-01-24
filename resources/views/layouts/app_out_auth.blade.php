@@ -1,4 +1,4 @@
-@php $URL = 'http://127.0.0.1:8000/'; @endphp
+@php $URL = env('APP_URL'); @endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>

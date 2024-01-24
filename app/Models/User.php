@@ -84,4 +84,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(qualification::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

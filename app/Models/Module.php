@@ -11,12 +11,18 @@ class Module extends Model
 
     protected $fillable = [
         'name',
-        'program_id'
+        'program_id',
+        'user_id' //Teacher
     ];
     
     public function program()
     {
         return $this->belongsTo(Program::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function qualifications()

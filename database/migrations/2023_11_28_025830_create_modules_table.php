@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('program_id');
             $table->foreign('program_id')->references('id')->on('programs');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users'); //Teacher
             $table->timestamps();
         });
     }

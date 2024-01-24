@@ -19,6 +19,8 @@ class UserSeeder extends Seeder
         $user = User::create([
             'nit' => 77168558,
             'username' => 'admin',
+            'firstname' => 'Administrativo' ,
+            'lastname' => 'Intesa',
             'email' => 'admin@argon.com',
             'password' => 'secret',
             'password_verified_at' => 'secret'

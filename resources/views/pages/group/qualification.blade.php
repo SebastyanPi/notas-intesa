@@ -30,13 +30,14 @@
                                 
                                 {{ $group->program->name }} <span class="badge badge-sm badge-n-primary"><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
                             </h5>
-                            <small>En esta Sección puedes gestionar los programas tecnicos.</small>
+                            <small>En esta Sección puedes gestionar las calificaciones del modulo seleccionado.</small>
                         </div>
                         
                         <div class="line-info">
                             <span class=""><i class="fas fa-layer-group"></i>Grupo : <b class="">{{ $group->code }}</b></span>
                             <span class="d-none"><i class="fas fa-user-graduate"></i>Numero de Matriculados :  <b class="">{{ count($group->students) }} </b></span>
                             <span class=""><i class="fas fa-book"></i>Modulo :  <b class="">{{  $module->name  }} </b></span>
+                            <span class=""><i class="fas fa-book"></i>Modulo :  <b class="">{{  $module->user->names()  }} </b></span>
                         </div>
                  
                     </div>

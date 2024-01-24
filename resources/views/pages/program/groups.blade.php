@@ -135,8 +135,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Docentes</label>
+                    <label for="exampleFormControlInput1">Docente</label>
+                    
                     <select class="form-control" name="user_id" id="">
+                        <option value="1">Administrativo Intesa</option>
                         @foreach ($users as $user)
                             <option value="{{ $user->id }}">{{ $user->firstname }} {{ $user->lastname }}</option>
                         @endforeach

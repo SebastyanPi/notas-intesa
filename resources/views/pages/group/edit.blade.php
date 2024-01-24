@@ -58,9 +58,13 @@
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">Docente</span>
                                         <select name="user_id" class="form-control text-center">
+                                            <option  @if ($group->user->id == 1)
+                                                selected class="text-danger"
+                                                @endif value="1">Administrativo Intesa</option>
+                                           
                                             @foreach ($users as $user)
                                                 <option @if ($user->id == $group->user->id)
-                                                    selected
+                                                    selected class="text-danger"
                                                 @endif value="{{ $user->id }}">{{ $user->names() }}</option>
                                             @endforeach                                         
                                         </select>

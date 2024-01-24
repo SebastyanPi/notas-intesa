@@ -76,7 +76,7 @@
                 @endphp
 
                 <tr class="text-center bg-n-aquarela">
-                  <td colspan="6" class="border-n-line">{{ $row->module->name }}</td>
+                  <td colspan="6" class="border-n-line"><b>Modulo</b> {{ $row->module->name }}</td>
                 </tr>
 
                 <tr class="text-center" style="height: 50%">

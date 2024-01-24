@@ -76,14 +76,18 @@
                 @endphp
 
                 <tr class="text-center bg-n-aquarela">
-                  <td colspan="6">{{ $row->module->name }}</td>
+                  <td colspan="6" class="border-n-line">{{ $row->module->name }}</td>
+                </tr>
+
+                <tr class="text-center" style="height: 50%">
+                  <td colspan="6" class="border-n-line"><span class="badge text-bg-primary bg-n-orange">Docente </span> {{ $row->module->user->names() }}</td>
                 </tr>
 
                 <tr class="text-center" style="font-size: 13px;">
-                  <td>Actitudinal (20%)</td>
-                  <td>Conceptual (30%)</td>
-                  <td>Procedimental (50%)</td>
-                  <td>Definititva</td>
+                  <td class="border-n-line">Actitudinal (20%)</td>
+                  <td class="border-n-line">Conceptual (30%)</td>
+                  <td class="border-n-line">Procedimental (50%)</td>
+                  <td class="border-n-line">Definititva</td>
                 </tr>
 
                   <tr class="text-center" style="color: #000;">

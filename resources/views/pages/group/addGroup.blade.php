@@ -124,6 +124,7 @@
                   <tr>
                     <th scope="col"></th>
                     <th class="text-center" scope="col">Modulo</th>
+                    <th class="text-center" scope="col">Docente</th>
                     <th class="text-center" scope="col">Click</th>
                   </tr>
                 </thead>
@@ -138,6 +139,7 @@
                       <tr>
                         <td class="text-center">{{  $k }}</td>
                         <td class="text-center">{{ $module->name }}</td>
+                        <td class="text-center">{{ $module->user->names() }}</td>
                         <td class="text-center"> <a href="{{ route('group.qualification', ['id'=> $group->id, 'module_id' => $module->id]) }}" class="btn-n btn-n-primary"><i class="fas fa-upload"></i>  </a></td>
                       </tr>
                   @endforeach

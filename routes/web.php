@@ -107,6 +107,8 @@ use App\Http\Livewire\TableComponent;
 		Route::get('teacher/list/pdf', [TeacherController::class, 'listPdf'])->middleware('can:teacher.index.pdf')->name('teacher.index.pdf');
 		Route::get('teacher/create', [TeacherController::class, 'create'])->middleware('can:teacher.create')->name('teacher.create');
 
+		Route::get('student/{id}/enroll', [StudentController::class, 'enroll'])->middleware('can:student.enroll')->name('student.enroll');
+		
 		Route::get('admin/list', [AdminController::class, 'index'])->middleware('can:admin.index')->name('admin.index');
 
 		Route::get('student/list', [StudentController::class, 'index'])->middleware('can:student.index')->name('student.index');
@@ -117,9 +119,5 @@ use App\Http\Livewire\TableComponent;
 		//Route::get('/users-list', TableComponent::Class);
 	
 		Route::get('student/list/program', [StudentController::class, 'page_student'])->middleware('can:page_student.index')->name('page_student.index');
-		
-
-	
-	
 	});
 

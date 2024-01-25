@@ -38,6 +38,12 @@ class StudentController extends Controller
         return view('pages.student.create');
     }
 
+    public function enroll($id)
+    {
+        $student = User::where('id', $id)->first();
+        return view('pages.student.enroll', compact('student'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

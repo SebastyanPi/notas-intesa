@@ -239,6 +239,11 @@
 
 
 
+.text-danger{
+    color: #fa0d30 !important;
+}
+
+
 /*Configuraciones Boostrap Propio*/
 .input-group-text{
     background-color: #e4e4e5 !important;

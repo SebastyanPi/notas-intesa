@@ -81,7 +81,7 @@ class UserProfileController extends Controller
     
         Cache::forget('users');
         if($request->page == "student"){
-            return redirect()->route('student.index');
+            return redirect()->route('student.enroll', $user1->id);
         }else{
             return redirect()->route('teacher.index');
         }

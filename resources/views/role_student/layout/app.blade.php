@@ -37,7 +37,7 @@
             <img src="{{ $URL }}/img/intesa.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top ">
             <a class="navbar-brand ml-4" href="#"><b>Intesa - Notas</b></a>
             
-            <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">

@@ -4,9 +4,17 @@
 
     <div class="container-fluid mt-4">
       <div>
-        <i class="fas fa-hand-sparkles"></i> Bienvenido/a <b> {{ auth()->user()->names() }}.</b>
-        <br />
         <h5 class="d-none">{{ auth()->user()->email }}</h5>
+      </div>
+
+      <div>
+        <div class="card bg-primary mt-3 text-white">
+          <div class="card-body">
+            Bienvenido al Campus Virtual- INTESA. <br />
+
+            <i class="fas fa-hand-sparkles"></i> Hola <b> {{ auth()->user()->names() }}.</b>
+          </div>
+        </div>
       </div>
 
       <div class="mt-2">
@@ -31,13 +39,17 @@
         </style>
 
 
-        
+        @php
+            $p = 0;
+        @endphp
 
         
 
         @foreach (auth()->user()->group_student as $item)
 
-
+              @php
+                $p++;
+              @endphp
         <br>
         
           <table class="mb-3">
@@ -120,6 +132,17 @@
           </style>
             
         @endforeach
+
+
+        @if ($p == 0)
+        <div>
+          <div class="card ">
+            <div class="card-body">
+              No existen notas registradas en el sistema.<br />
+            </div>
+          </div>
+        </div>
+        @endif
 
 
       </div>

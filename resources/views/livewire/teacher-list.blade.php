@@ -107,7 +107,7 @@
                         <tr>
                             <td colspan="8" class="text-center">
                                 <small> 
-                                    No existen estudiantes agregados.
+                                    No existen docentes agregados.
                                 </small>
                             </td>
                         </tr>

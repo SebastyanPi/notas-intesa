@@ -105,8 +105,10 @@
 
                     @if ($k == 0)
                         <tr>
-                            <td colspan="8">
-                                No existen docentes agregados.
+                            <td colspan="8" class="text-center">
+                                <small> 
+                                    No existen estudiantes agregados.
+                                </small>
                             </td>
                         </tr>
                     @endif

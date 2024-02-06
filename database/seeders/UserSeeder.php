@@ -27,41 +27,26 @@ class UserSeeder extends Seeder
         ]);
         $user->assignRole('Administrador');
 
-     
+        $user2 = User::create([
+            'nit' => '1003378106',
+            'username' => 'Estudiante',
+            'firstname' => 'Estudiante Prueba' ,
+            'lastname' => 'Intesata Romeralitia',
+            'email' => 'student@argon.com',
+            'password' => 'secret',
+            'password_verified_at' => 'secret'
+        ]);
+        $user2->assignRole('Estudiante');
 
-        /*for ($i=0; $i < 101; $i++) { 
-            $user1 = User::create([
-                'nit' => '1003378106'.$i,
-                'username' => 'Estudiante'.$i ,
-                'firstname' => 'Estudiante'.$i.' Gabriel' ,
-                'lastname' => 'Intesata Romeralitia',
-                'email' => 'student'.$i.'@argon.com',
-                'password' => 'secret',
-                'password_verified_at' => 'secret'
-            ]);
-            $user1->assignRole('Estudiante');
-        }
-
-
-        for ($i=0; $i < 101; $i++) {
-            $user2 = User::create([
-                'nit' => '7435245'.$i,
-                'username' => 'Profesor'.$i,
-                'firstname' => 'Profesor'.$i.' Gabriel' ,
-                'lastname' => 'Pineda Marquez',
-                'email' => 'profesor'.$i.'@argon.com',
-                'password' => 'secret',
-                'password_verified_at' => 'secret'
-            ]);
-            $user2->assignRole('Profesor');
-        }*/
-
-        //User::factory(20)->create();
-
-        /*DB::table('users')->insert([
-            'username' => 'admin',
-            'email' => 'admin@argon.com',
-            'password' => bcrypt('secret')
-        ]);*/
+        $user3 = User::create([
+            'nit' => '7435245',
+            'username' => 'Profesor',
+            'firstname' => 'Profesor Prueba' ,
+            'lastname' => 'Pineda Marquez',
+            'email' => 'profesor@argon.com',
+            'password' => 'secret',
+            'password_verified_at' => 'secret'
+        ]);
+        $user3->assignRole('Profesor');
     }
 }

@@ -102,7 +102,14 @@
                         </td>
                     </tr>
                     @endforeach
-    
+                    
+                    @if ($k == 0)
+                        <tr>
+                            <td colspan="8">
+                                No existen estudiantes agregados.
+                            </td>
+                        </tr>
+                    @endif
     
                 </tbody>
     

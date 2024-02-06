@@ -101,6 +101,15 @@
                         </td>
                     </tr>
                     @endforeach
+
+
+                    @if ($k == 0)
+                        <tr>
+                            <td colspan="8">
+                                No existen docentes agregados.
+                            </td>
+                        </tr>
+                    @endif
     
     
                 </tbody>

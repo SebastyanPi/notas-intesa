@@ -11,7 +11,7 @@ class TeacherList extends Component
     public $search = "", $users; 
 
     public function mount(){
-        $this->users = User::role('Profesor')->get();
+        $this->users = User::role('Profesor')->orderBy('id', 'desc')->get();
         Cache::put('teacher', $this->users);
     }
 
@@ -29,7 +29,7 @@ class TeacherList extends Component
                 # code...
                 $users = Cache::get('teacher');
             }else{
-                $users = User::role('Profesor')->get();
+                $users = User::role('Profesor')->orderBy('id', 'desc')->get();
                 Cache::put('teacher', $users);
             }
             $this->users = $users;

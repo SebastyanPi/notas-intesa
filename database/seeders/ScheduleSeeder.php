@@ -15,6 +15,8 @@ class ScheduleSeeder extends Seeder
      */
     public function run()
     {
-        schedule::create(['name' => 'Martes y Jueves en la Noche']);
+        schedule::create(['name' => 'Martes y Jueves de 6:30pm - 8:30pm']);
+        schedule::create(['name' => 'Martes y Jueves de 7:00pm - 9:00pm']);
+        schedule::create(['name' => 'Sabado de 8:00am - 11:30am']);
     }
 }

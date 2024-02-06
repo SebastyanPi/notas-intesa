@@ -239,6 +239,49 @@ function redondeo(frase){
 } 
 
 
+$(".table").keydown(function (e) {
+  var items = $(this).find('.input'),
+  activo = document.activeElement;
+  
+  if (e.which == 39) {
+    //ciclo for que valida si NO es el último 
+    for (var i = 0; i < items.length - 1; i++) {
+      if(activo === items[i]){
+        items[i + 1].focus();
+      }
+    }
+  }
+  if (e.which == 37) {
+    //ciclo for que valida si NO es el primero
+    for (var i = 1; i < items.length; i++) {
+      if (activo === items[i]) {
+        items[i - 1].focus();
+      }
+    }
+  }
+});
+
+
+$(function() 
+        {
+        $('.inputkey').keyup(function(e) {
+            if(e.keyCode==37)//38 para arriba //flecha derecha 39 
+            mover(e,-1);
+            if(e.keyCode==39)//40 para abajo // felcha abajo 37
+            mover(e,1);
+        });
+        });
+
+
+        function mover(event, to) {
+            let list = $('.inputkey');
+            let index = list.index($(event.target));
+            index = (index + to) % list.length;
+            list.eq(index).focus();
+        }
+
+
+
         /*document.addEventListener("keypress", function(event) {
             var clases = event.target.classList;
             var is_punto = false;

@@ -21,7 +21,7 @@ class StudentController extends Controller
 
     public function listPdf(){
         date_default_timezone_set('America/Bogota');
-        $students = User::role('Estudiante')->get();
+        $students = User::role('Estudiante')->orderBy('id', 'desc')->get();
         $date = Carbon::now();
         $fechaHoy = $date->toDateTimeString();
         $pdf = Pdf::loadView('pages.pdf.studentlist', compact('students','fechaHoy'));

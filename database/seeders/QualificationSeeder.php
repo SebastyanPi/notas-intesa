@@ -16,7 +16,7 @@ class QualificationSeeder extends Seeder
     public function run()
     {
         //
-        $calificacion = qualification::create([
+        /*$calificacion = qualification::create([
             "user_id" => 2,
             "module_id" => 1,
             "group_id" => 1,
@@ -54,7 +54,7 @@ class QualificationSeeder extends Seeder
             "note2" => 45,
             "note3" => 23,
             "fails" => 1
-        ]);
+        ]);*/
 
 
     }

@@ -21,15 +21,15 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'firstname' => 'Administrativo' ,
             'lastname' => 'Intesa',
-            'email' => 'admin@argon.com',
-            'password' => 'secret',
-            'password_verified_at' => 'secret'
+            'email' => 'intesa.academia@gmail.com',
+            'password' => 'Admin2024!',
+            'password_verified_at' => 'Admin2024!'
         ]);
         $user->assignRole('Administrador');
 
      
 
-        for ($i=0; $i < 101; $i++) { 
+        /*for ($i=0; $i < 101; $i++) { 
             $user1 = User::create([
                 'nit' => '1003378106'.$i,
                 'username' => 'Estudiante'.$i ,
@@ -54,7 +54,7 @@ class UserSeeder extends Seeder
                 'password_verified_at' => 'secret'
             ]);
             $user2->assignRole('Profesor');
-        }
+        }*/
 
         //User::factory(20)->create();
 

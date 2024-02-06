@@ -16,7 +16,7 @@ class ModuleSeeder extends Seeder
     public function run()
     {
         //
-        $module1 = Module::create(['name' => 'Contabilidad I','program_id' => 1, 'user_id' => 105]);
-        $module2 = Module::create(['name' => 'Tributaria', 'program_id'=> 1, 'user_id' => 106]);
+        /*$module1 = Module::create(['name' => 'Contabilidad I','program_id' => 1, 'user_id' => 105]);
+        $module2 = Module::create(['name' => 'Tributaria', 'program_id'=> 1, 'user_id' => 106]);*/
     }
 }

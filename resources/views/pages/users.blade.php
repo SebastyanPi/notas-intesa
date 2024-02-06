@@ -44,43 +44,68 @@
                     <form method="POST" action="{{ route('users.new') }}">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6 form-group">
-                                <label for="exampleInputEmail1">Nombre</label>
-                                <input type="text" name="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"   value="{{  old('firstname')  }}">
+
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Nombres</span>
+                                    <input type="text" name="firstname"  class="form-control text-center" aria-describedby="basic-addon1" value="{{ old('firstname') }}">
+                                  </div>
                             </div>
-                            <div class="col-md-6 form-group">
-                                <label for="exampleInputEmail1">Apellido</label>
-                                <input type="text" name="lastname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  value="{{  old('lastname')  }}">
+
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Apellidos</span>
+                                    <input type="text" name="lastname"  class="form-control text-center" aria-describedby="basic-addon1" value="{{ old('lastname') }}">
+                                  </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 form-group">
-                                <label for="exampleInputEmail1">Cedula</label>
-                                <input type="number" name="nit" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{  old('nit')  }}">
+
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Cedula</span>
+                                    <input type="number" name="nit"  class="form-control text-center" aria-describedby="basic-addon1" value="{{ old('nit') }}">
+                                  </div>
                             </div>
-                            <div class="col-md-6 form-group">
-                                <label for="exampleInputEmail1">Correo Electronico</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{  old('email')  }}">
+
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Correo</span>
+                                    <input type="email" name="email"  class="form-control text-center" aria-describedby="basic-addon1" value="{{ old('email') }}">
+                                  </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Contraseña</label>
-                          <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="{{  old('password')  }}" >
+
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                                    <input type="password" name="password" id="password" class="form-control text-center" aria-describedby="basic-addon1" value="{{ old('password') }}">
+                                  </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="n-tooltip"><b><small>Ver contraseña</small></b>
+                                    <span class="n-tooltiptext" id="verpassword"></span>
+                                  </div>
+                            </div>
                         </div>
 
                         <input type="hidden" name="page" value="{{ $before }}">
 
                         <div class="form-inline">
-                            <small>Elije los <b>Roles</b></small>
+                            <small class="d-none">Elije los <b>Roles</b></small>
                             <div class="row">
                                 <div class="col-auto mb-3 form-check ml-4">
                                     <input                    
-                                    type="checkbox" name="estudiante" value="estudiante" class="form-check-input" id="exampleCheck1">
+                                    type="radio" @if ($before == "student")
+                                        checked
+                                    @endif name="role" value="estudiante" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Estudiante</label>
                                 </div>
                                 <div class="col-auto mb-3 form-check">
-                                    <input
-                                    type="checkbox" name="profesor" value="profesor" class="form-check-input" id="exampleCheck2">
+                                    <input @if ($before == "teacher")
+                                    checked
+                                @endif
+                                    type="radio" name="role" value="profesor" class="form-check-input" id="exampleCheck2">
                                     <label class="form-check-label" for="exampleCheck2">Profesor</label>
                                 </div>
                             </div>
@@ -93,6 +118,14 @@
         </div>
     </div>
 
+
+    <script>
+ 
+        $( "#password" ).on( "keyup", function() {
+            $("#verpassword").text($(this).val());
+        });
+
+    </script>
 
  
 

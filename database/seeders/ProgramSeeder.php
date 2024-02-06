@@ -15,13 +15,13 @@ class ProgramSeeder extends Seeder
      */
     public function run()
     {
-        $program1 = Program::create(['name' => 'Asistente Administrativo','type' => 'Tecnico']);
-        $program2 = Program::create(['name' => 'Seguridad Laboral','type' => 'Tecnico']);
+        $program1 = Program::create(['name' => 'Auxiliar Administrativo','type' => 'Tecnico']);
         $program3 = Program::create(['name' => 'Auxiliar de Primera Infancia','type' => 'Tecnico']);
+        $program2 = Program::create(['name' => 'Seguridad En El Trabajo','type' => 'Tecnico']);
         $program4 = Program::create(['name' => 'Mecanica Diesel Automotriz','type' => 'Tecnico']);
         $program5 = Program::create(['name' => 'Maquinaria Pesada','type' => 'Tecnico']);
 
-        $program6 = Program::create(['name' => 'Pedagogia Infantil','type' => 'Diplomado']);
+        /*$program6 = Program::create(['name' => 'Pedagogia Infantil','type' => 'Diplomado']);
         $program7 = Program::create(['name' => 'Sistema de Seguridad y Salud en el Trabajo','type' => 'Diplomado']);
         $program8 = Program::create(['name' => 'Normas NIFF','type' => 'Diplomado']);
 
@@ -33,6 +33,6 @@ class ProgramSeeder extends Seeder
         $program13 = Program::create(['name' => 'Inyeccion Electronica','type' => 'Seminario']);
 
         $program12 = Program::create(['name' => 'Capacitación: El Saber Hacer','type' => 'Otro']);
-        $program13 = Program::create(['name' => 'Capacitación: Ingles II','type' => 'Otro']);
+        $program13 = Program::create(['name' => 'Capacitación: Ingles II','type' => 'Otro']);*/
     }
 }

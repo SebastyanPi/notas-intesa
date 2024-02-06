@@ -16,7 +16,7 @@ class GroupStudentSeeder extends Seeder
     public function run()
     {
         //
-        $groups = GroupStudent::create([
+        /*$groups = GroupStudent::create([
             'group_id' => 1,
             'user_id' => 1,
         ]);
@@ -32,6 +32,6 @@ class GroupStudentSeeder extends Seeder
         $groups = GroupStudent::create([
             'group_id' => 2,
             'user_id' => 4,
-        ]);
+        ]);*/
     }
 }

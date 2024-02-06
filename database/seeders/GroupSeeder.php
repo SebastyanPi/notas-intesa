@@ -16,7 +16,7 @@ class GroupSeeder extends Seeder
     public function run()
     {
         //
-        $group1 = group::create([
+        /*$group1 = group::create([
             'code' => 'INF1-2023-02',
             'program_id' => 1,
             'schedule_id' => 1,
@@ -28,7 +28,7 @@ class GroupSeeder extends Seeder
             'program_id' => 2,
             'schedule_id' => 1,
             'user_id' => 1,
-        ]);
+        ]);*/
 
     }
 }

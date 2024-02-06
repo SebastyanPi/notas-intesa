@@ -64,14 +64,14 @@
                                 </div>
                             </td>
                             <td>
-                                <input value="{{  $item->note1();  }}" type="text" class="form-control form-control-sm text-center puntos sum campi" style="font-size:15px;" id="camp1_{{$i}}" name="camp1_{{$i}}" atr="{{$i}}" lol="1"   >
+                                <input value="{{  $item->note1();  }}" type="text" class="form-control form-control-sm text-center puntos sum campi inputkey" style="font-size:15px;" id="camp1_{{$i}}" name="camp1_{{$i}}" atr="{{$i}}" lol="1"   >
                                 <input type="hidden" name="user_{{$i}}" value="{{ $item->user_id }}">
                             </td>
                             <td class="align-middle text-center text-sm">
-                                <input value="{{  $item->note2();  }}" type="text" class="form-control form-control-sm text-center puntos sum campi" style="font-size:15px;" id="camp2_{{$i}}" name="camp2_{{$i}}" atr="{{$i}}" lol="2"  >
+                                <input value="{{  $item->note2();  }}" type="text" class="form-control form-control-sm text-center puntos sum campi inputkey" style="font-size:15px;" id="camp2_{{$i}}" name="camp2_{{$i}}" atr="{{$i}}" lol="2"  >
                             </td>
                             <td class="align-middle text-center">
-                                <input value="{{  $item->note3();  }}" type="text" class="form-control form-control-sm text-center puntos sum campi" style="font-size:15px;" id="camp3_{{$i}}" name="camp3_{{$i}}" atr="{{$i}}" lol="3" >
+                                <input value="{{  $item->note3();  }}" type="text" class="form-control form-control-sm text-center puntos sum campi inputkey" style="font-size:15px;" id="camp3_{{$i}}" name="camp3_{{$i}}" atr="{{$i}}" lol="3" >
                             </td>
                             <td class="text-center" >
                                 <input @if ($item->definitive() < 3.5)
@@ -80,7 +80,7 @@
                             </td>
 
                             <td class="text-center" >
-                                <input value="{{ $item->fails }}" type="text" class="form-control fin form-control-sm text-center" style="font-size:15px;" name="fails_{{$i}}" >
+                                <input value="{{ $item->fails }}" type="text" class="form-control fin form-control-sm text-center inputkey" style="font-size:15px;" name="fails_{{$i}}" >
                             </td>
 
                             <td class="text-center">

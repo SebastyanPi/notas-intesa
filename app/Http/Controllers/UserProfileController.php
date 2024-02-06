@@ -72,15 +72,15 @@ class UserProfileController extends Controller
             'password' => $request->password,
             'password_verified_at' => $request->password,
         ]);
-        if(isset($request->estudiante) && $request->estudiante  == "estudiante"){
+        if(isset($request->role) && $request->role  == "estudiante"){
             $user1->assignRole('Estudiante');
         }
-        if(isset($request->profesor) && $request->profesor == "profesor"){
+        if(isset($request->role) && $request->role == "profesor"){
             $user1->assignRole('Profesor');
         }
     
         Cache::forget('users');
-        if($request->page == "student"){
+        if($request->role == "estudiante"){
             return redirect()->route('student.enroll', $user1->id);
         }else{
             return redirect()->route('teacher.index');
@@ -139,7 +139,7 @@ class UserProfileController extends Controller
             array_push($roles,$value);
         }
 
-        if($request->estudiante == "Si"){
+        if($request->role == "Si"){
             if(!in_array('Estudiante', $roles)){
                 $user->assignRole('Estudiante');
             }

@@ -8,65 +8,6 @@
         </div>
     </div>
 </div>
-<main class="main-content  mt-0" style="display: none">
-    <section>
-        <div class="page-header min-vh-100">
-            <div class="container">
-
-                    <div class="d-flex justify-content-center align-item-center">
-                        <div class="">
-                            Hola
-                            <input type="text">
-                        </div>
-                    </div>
-                <div class="">
-                    <div class="W-50">
-                        <div class="card card-plain">
-                            <div class="card-header pb-0 text-center">
-                                <h1 class="font-weight-bolder">INTESA</h1>
-                                <small>Plataforma Institucional</small>
-                            </div>
-                            <div class="card-body">
-                                <form role="form" method="POST" action="">
-                                    @csrf
-                                    @method('post')
-                                    <div class="flex flex-col mb-3 d-none">
-                                        <input type="email" name="email" class="input-n" value="" aria-label="Email">
-                                        @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
-                                    </div>
-
-                                    <!---
-                                        <div class="flex flex-col mb-3">
-                                        <input type="email" name="email" class="input-n" value=" old('email') ?? 'admin@argon.com' " aria-label="Email">
-                                        <p class="text-danger text-xs pt-1">  </p>
-                                    </div>
-                                        
-                                        
-                                        ---->
-                                    <div class="flex flex-col mb-1">
-                                        <input type="password" name="password" class="input-n" aria-label="Password" value="" >
-                                        @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
-                                    </div>
-                                    
-                                    <div class="form-check form-switch d-none">
-                                        <input class="form-check-input" name="remember" type="checkbox" id="rememberMe">
-                                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn-n btn-n-primary w-100"> Iniciar Sesión</button>
-                                    </div>
-                                </form>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
 
 <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
@@ -145,11 +86,11 @@
             @csrf
             @method('post')
             <div class="flex flex-col mb-1">
-        <input type="email" name="email" class="form-control form-control-lg" value="{{ old('email') ?? 'admin@argon.com' }}" aria-label="Email">
+        <input type="email" name="email" class="form-control form-control-lg" value="{{ old('email') ?? '' }}" aria-label="Email">
         @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
         </div>
         <div class="flex flex-col mb-1">
-        <input type="password" name="password" class="form-control form-control-lg" aria-label="Password" value="secret">
+        <input type="password" name="password" class="form-control form-control-lg" aria-label="Password" value="">
         @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
         </div>
         <div class="flex flex-col mb-1">

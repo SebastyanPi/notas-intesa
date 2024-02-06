@@ -30,7 +30,7 @@
                                 <form role="form" method="POST" action="">
                                     @csrf
                                     @method('post')
-                                    <div class="flex flex-col mb-3">
+                                    <div class="flex flex-col mb-3 d-none">
                                         <input type="email" name="email" class="input-n" value="" aria-label="Email">
                                         @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
                                     </div>

@@ -160,6 +160,9 @@ class UserProfileController extends Controller
         qualification::where("user_id", $request->id)->delete();
         GroupStudent::where("user_id", $request->id)->delete();
         User::where('id', $request->id)->delete();
-        return redirect()->route('user.list');
+        if($request->before == "student"){
+            return redirect()->route('student.index');
+        }
+        return redirect()->route('teacher.index');
     }
 }

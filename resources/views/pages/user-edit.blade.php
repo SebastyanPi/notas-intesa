@@ -272,7 +272,7 @@
               <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Deseas eliminar a este estudiante del curso?</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="GET" action="{{ route('users.delete',$user->id) }}">
+            <form method="GET" action="{{ route('users.delete',['id' => $user->id, 'before' => $before]) }}">
                 @csrf
                 <div class="modal-body">
                     <p>Cuando eliminas al estudiante, eliminas todas las notas asignadas en los modulos de este programa.</p>
@@ -280,8 +280,8 @@
                     <h6>Nombre : <span id="NombreModal">{{  $user->firstname  }} {{ $user->lastname }}</span> </h6>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Si, Eliminar</button>
+                    <button type="button" class="btn btn-n-secondary close" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-n-danger">Si, Eliminar</button>
                 </div>
             </form>
           </div>

@@ -18,7 +18,7 @@
     
     <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
     <div class="container-fluid">
-    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="https://argon-dashboard-laravel.creative-tim.com/dashboard">
+    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="">
     Instituto Tecnico Del Saber
     </a>
     <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +29,9 @@
     </span>
     </button>
     <div class="collapse navbar-collapse" id="navigation">
-    <ul class="navbar-nav mx-auto">
+    <ul class="navbar-nav mx-auto ">
     <li class="nav-item d-none">
-    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="https://argon-dashboard-laravel.creative-tim.com/dashboard">
+    <a class="nav-link d-flex align-items-center me-2 active d-none" aria-current="page" href="">
     <i class="fa fa-chart-pie opacity-6 text-dark me-1" aria-hidden="true"></i>
     Dashboard
     </a>
@@ -51,7 +51,7 @@
     </ul>
     <ul class="navbar-nav d-lg-block d-none">
     <li class="nav-item">
-    <a href="https://www.creative-tim.com/product/argon-dashboard-laravel" target="_blank" class="btn btn-sm mb-0 me-1 btn-primary"><i class="fab fa-whatsapp"></i> Contactar</a>
+    <a href="https://institutointesa.edu.co/" target="_blank" class="btn  mb-0 me-1 btn-primary"><i class="fas fa-laptop-house"></i> Sitio Web - OFicial</a>
     </li>
     </ul>
     </div>
@@ -86,13 +86,15 @@
             @csrf
             @method('post')
             <div class="flex flex-col mb-1">
-        <input type="email" name="email" class="form-control form-control-lg" placeholder="Correo" value="{{ old('email') ?? '' }}" aria-label="Email">
-        @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
-        </div>
-        <div class="flex flex-col mb-1">
-        <input type="password" name="password" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Password" value="">
-        @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
-        </div>
+                <input type="email" name="email" class="form-control form-control-lg" placeholder="Correo" value="{{ old('email') ?? '' }}" aria-label="Email">
+                @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
+            </div>
+
+            <div class="flex flex-col mb-1">
+                <input type="password" name="password" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Password" value="">
+                @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
+            </div>
+            
         <div class="flex flex-col mb-1">
             <select name="role" id="" class="form-control">
                 <option value="Estudiante">Rol Estudiante</option>

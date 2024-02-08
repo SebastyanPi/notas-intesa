@@ -95,7 +95,7 @@ use App\Http\Livewire\TableComponent;
 		Route::get('/users-list', [UserProfileController::class, 'list'])->middleware('can:user.list')->name('user.list');
 		Route::get('/users-edit/{id}/{before}', [UserProfileController::class, 'edit'])->middleware('can:users.edit')->name('users.edit');
 		Route::post('/users-update/{id}/', [UserProfileController::class, 'save'])->middleware('can:users.update')->name('users.update');
-		Route::get('/users-delete/{id}/', [UserProfileController::class, 'delete'])->middleware('can:users.delete')->name('users.delete');
+		Route::get('/users-delete/{id}/{before}', [UserProfileController::class, 'delete'])->middleware('can:users.delete')->name('users.delete');
 		Route::post('/users-register/store', [UserProfileController::class, 'register'])->middleware('can:users.new')->name('users.new');
 	
 		Route::get('/add-group/{id}', [GroupController::class, 'add'])->middleware('can:group.add')->name('group.add');

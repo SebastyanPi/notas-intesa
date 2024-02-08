@@ -61,7 +61,7 @@
 
     <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-fullscreen" role="document">
       <div class="modal-content">
         <div class="modal-header" style="display: block">
             <div class="">
@@ -100,7 +100,7 @@
 
   <!-- Modal -->
   <div class="modal fade" id="modalnotas"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
             <div class="">

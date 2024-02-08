@@ -59,23 +59,25 @@
     </div>
 
 
-  <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="true" role="dialog" style="display: block;">
+  <div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="true" role="dialog" >
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Matricular Estudiantes</h1>
-            <div>
-                <p>Nombre del Programa : <b>Tecnico Laboral {{ $group->program->name }} </b></p> 
-            </div>
-            <div class="line-info mt-2">
-                
-                <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
-                <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
-            </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            
+          
         </div>
         <form method="POST" action="" >
             <div class="modal-body">
+                <div>
+                    <p>Nombre del Programa : <b>Tecnico Laboral {{ $group->program->name }} </b></p> 
+                </div>
+                <div class="line-info mt-2">
+                    
+                    <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
+                    <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
+                </div>
                 @csrf
                 
                 @livewire('parent-list-group',["id_group" => $group->id, "group" => $group])
@@ -108,7 +110,7 @@
                 </div>
                 
             </div>
-            <button button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
           

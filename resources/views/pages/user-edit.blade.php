@@ -269,13 +269,16 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Deseas eliminar a este estudiante del curso?</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Deseas eliminar a este @if ($before == "student")
+                  estudiante @else docente
+              @endif del curso?</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="GET" action="{{ route('users.delete',['id' => $user->id, 'before' => $before]) }}">
                 @csrf
                 <div class="modal-body">
-                    <p>Cuando eliminas al estudiante, eliminas todas las notas asignadas en los modulos de este programa.</p>
+                    <p>Cuando eliminas al @if ($before == "student") estudiante @else docente
+                    @endif, eliminas todas las notas asignadas en los modulos de este programa.</p>
                     <h6>Cedula : <span id="CedulaModal">{{ $user->nit }}</span></h6>
                     <h6>Nombre : <span id="NombreModal">{{  $user->firstname  }} {{ $user->lastname }}</span> </h6>
                 </div>

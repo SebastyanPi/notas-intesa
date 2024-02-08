@@ -64,7 +64,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Matricular Estudiantes</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #000"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #000"></button>
         </div>
         <form method="POST" action="" >
             <div class="modal-body">

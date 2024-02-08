@@ -63,10 +63,8 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Matricular Estudiantes</h1>
-            
-          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form method="POST" action="" >
             <div class="modal-body">

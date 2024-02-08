@@ -156,8 +156,8 @@
     
     });
 
-    $(".EliminarItem").click(()=>{
-        $(".close").click();
+    $(".EliminarItem").click(() => {
+        $(".btn-n-informative").click();
     });
 
     $(".close").click(function(){

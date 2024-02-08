@@ -95,32 +95,8 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel1">Full screen modal</h1>
+          <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel1"><i class="fas fa-users"></i> Cargar Notas</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
- 
-
-  <!-- Modal -->
-  <div class="modal fade" id="modalnotas" tabindex="-1" aria-labelledby="exampleModalNotas" aria-modal="true" role="dialog" >
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-4" id="exampleModalNotas"><i class="fas fa-users"></i> Cargar Notas</h1>
-            <button type="button" class="btn-close close" data-dismiss="modal" aria-label="Close" style="color: #000; font-size:15px;">
-                <span aria-hidden="true">&times;</span>
-              </button>
-          
         </div>
         <div class="modal-body">
             <div class="my-3">
@@ -130,6 +106,7 @@
                     <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
                 </div>
             </div>
+
             <table class="table table-striped border ">
                 <thead>
                   <tr>
@@ -159,10 +136,12 @@
               </table>
 
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-
 
   <script>
     $(".sidenav").remove();

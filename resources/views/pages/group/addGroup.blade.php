@@ -64,7 +64,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Matricular Estudiantes</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #000">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <form method="POST" action="" >
             <div class="modal-body">
@@ -97,7 +99,7 @@
       <div class="modal-content">
         <div class="modal-header">
             <h1 class="modal-title fs-4" id="exampleModalNotas"><i class="fas fa-users"></i> Cargar Notas</h1>
-            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" style="color: #000">
                 <span aria-hidden="true">&times;</span>
               </button>
           

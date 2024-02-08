@@ -70,14 +70,15 @@
         </div>
         <form method="POST" action="" >
             <div class="modal-body">
-                <div>
+                <div class="my-2">
                     <p>Nombre del Programa : <b>Tecnico Laboral {{ $group->program->name }} </b></p> 
-                </div>
-                <div class="line-info mt-2">
+                    <div class="line-info mt-2">
                     
-                    <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
-                    <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
+                        <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
+                        <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
+                    </div>
                 </div>
+                
                 @csrf
                 
                 @livewire('parent-list-group',["id_group" => $group->id, "group" => $group])
@@ -105,10 +106,12 @@
           
         </div>
         <div class="modal-body">
-            <b>Tecnico Laboral {{ $group->program->name }} </b>
-            <div class="line-info mt-2">
-                <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
-                <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
+            <div class="my-3">
+                <b>Tecnico Laboral {{ $group->program->name }} </b>
+                <div class="line-info mt-2">
+                    <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
+                    <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
+                </div>
             </div>
             <table class="table table-striped border ">
                 <thead>

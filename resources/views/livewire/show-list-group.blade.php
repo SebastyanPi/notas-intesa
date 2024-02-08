@@ -5,7 +5,7 @@
             <div class="mb-3 d-flex justify-content-end">
                 <div>
                     <span data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen" class="btn-n-small btn-n-primary" id="notas" style="font-size: 15px"><i class="fas fa-upload"></i> Cargar Notas</span>
-                    <span data-bs-toggle="modal" data-bs-target="#modalnotas" class="btn-n-small btn-n-primary" id="notas" style="font-size: 15px"><i class="fas fa-upload"></i> Agregar Estudiante</span>
+                    <span data-bs-toggle="modal" data-bs-target="#modalnotas" class="btn-n-small btn-n-primary" style="font-size: 15px"><i class="fas fa-upload"></i> Agregar Estudiante</span>
                     <a target="__blank" href="{{ route('group.pdf', ['id' => $id_group  ]) }}" class="btn-n-small btn-n-danger-outline"  style="font-size: 15px"><i class="fas fa-download"></i><b>PDF</b></a>
                 </div>
             </div>

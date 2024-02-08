@@ -96,7 +96,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel1"><i class="fas fa-users"></i> Cargar Notas</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #000;">
             <span style="font-size:30px !important;" aria-hidden="true">&times;</span>
           </button>
         </div>

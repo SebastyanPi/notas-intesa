@@ -84,7 +84,7 @@
                 @livewire('parent-list-group',["id_group" => $group->id, "group" => $group])
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn-n btn-n-informative" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn-n btn-n-informative" data-bs-dismiss="modal">Cerrar</button>
               </div>
         </form>
       </div>
@@ -139,7 +139,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn-n btn-n-informative" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn-n btn-n-informative" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>

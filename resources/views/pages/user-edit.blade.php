@@ -277,8 +277,8 @@
             <form method="GET" action="{{ route('users.delete',['id' => $user->id, 'before' => $before]) }}">
                 @csrf
                 <div class="modal-body">
-                    <p>Cuando eliminas al @if ($before == "student") estudiante @else docente
-                    @endif, eliminas todas las relaciones asiganadas a él.</p>
+                    <b><small>Cuando eliminas al @if ($before == "student") estudiante @else docente
+                    @endif, eliminas todas las relaciones asiganadas a él.</small></b>
                     <h6>Cedula : <span id="CedulaModal">{{ $user->nit }}</span></h6>
                     <h6>Nombre : <span id="NombreModal">{{  $user->firstname  }} {{ $user->lastname }}</span> </h6>
                 </div>

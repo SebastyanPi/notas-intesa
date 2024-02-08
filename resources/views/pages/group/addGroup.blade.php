@@ -162,6 +162,10 @@
         $(".close").click();
     });
 
+    $(".close").click(function(){
+        $("#modalnotas").removeClass('show');
+    }); 
+
 
   </script>
 

@@ -92,12 +92,12 @@
  
 
   <!-- Modal -->
-  <div class="modal fade" id="modalnotas" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" role="dialog">
+  <div class="modal fade" id="modalnotas" tabindex="-1" aria-labelledby="exampleModalNotas" aria-modal="true" role="dialog" >
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel"><i class="fas fa-users"></i> Cargar Notas</h1>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h1 class="modal-title fs-4" id="exampleModalNotas"><i class="fas fa-users"></i> Cargar Notas</h1>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
           

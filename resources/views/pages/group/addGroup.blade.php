@@ -96,24 +96,18 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-            <div class="">
-                <h5 class="mb-2"><i class="fas fa-users"></i> Cargar Notas</h5>
-            
-                <b>Tecnico Laboral {{ $group->program->name }} </b>
-             
-
-                <div class="line-info mt-2">
-                    <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
-                    <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
-                </div>
-                
-            </div>
+            <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel"><i class="fas fa-users"></i> Cargar Notas</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
           
         </div>
         <div class="modal-body">
+            <b>Tecnico Laboral {{ $group->program->name }} </b>
+            <div class="line-info mt-2">
+                <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
+                <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
+            </div>
             <table class="table table-striped border ">
                 <thead>
                   <tr>

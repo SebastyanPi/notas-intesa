@@ -59,42 +59,35 @@
     </div>
 
 
-    <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" tabindex="-1" role="dialog"  >
-    <div class="modal-dialog modal-fullscreen" role="document">
+  <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="true" role="dialog" style="display: block;">
+    <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
-        <div class="modal-header" style="display: block">
-            <div class="">
-                <h5 class="mb-2"><i class="fas fa-users"></i> Matricular Estudiantes</h5>
-                
+        <div class="modal-header">
+          <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Matricular Estudiantes</h1>
+            <div>
                 <p>Nombre del Programa : <b>Tecnico Laboral {{ $group->program->name }} </b></p> 
             </div>
-            <div>    
-         
-                <div class="line-info mt-2">
-                    <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
-                    <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
-                </div>
+            <div class="line-info mt-2">
+                
+                <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
+                <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
             </div>
-
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-            <form method="POST" action="" >
+        <form method="POST" action="" >
+            <div class="modal-body">
                 @csrf
                 
                 @livewire('parent-list-group',["id_group" => $group->id, "group" => $group])
-
-        </div>
-        <div class="modal-footer">
-          
-        </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+           
+            </div>
+        </form>
       </div>
     </div>
   </div>
+
 
  
 

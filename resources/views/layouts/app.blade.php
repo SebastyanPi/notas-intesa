@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="./img/intesa.png">
-    <link rel="icon" type="image/png" href="./img/intesa.png">
+    <link rel="icon" type="image/png" href="{{ env('APP_URL') }}img/intesa.png">
     <title>
         Intesa - Notas
     </title>

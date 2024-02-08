@@ -63,7 +63,7 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Matricular Estudiantes</h1>
+          <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel"><i class="fas fa-users"></i> Matricular Estudiantes</h1>
           <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close" style="color: #000;">
             <span style="font-size:30px !important;" aria-hidden="true">&times;</span>
           </button>

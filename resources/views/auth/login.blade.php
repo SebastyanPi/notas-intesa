@@ -82,12 +82,12 @@
             <div class="d-flex justify-content-center align-item-center mb-3">
                 <img src="img/intesa.png" class="w-50 text-center " alt="">
             </div>
-        <form role="form" method="POST" action="{{ route('login.perform') }}">
+        <form role="form" method="POST" action="{{ route('login.perform') }}" id="form">
             @csrf
             @method('post')
             <div class="flex flex-col mb-1">
-                <input type="email" name="email" class="form-control " placeholder="Correo" value="{{ old('email') ?? '' }}" aria-label="Email">
-                @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
+                <input type="number" name="cedula" class="form-control " id="cedula" placeholder="Cedula" value="{{ old('nit') ?? '' }}" aria-label="Cedula">
+                
             </div>
 
             <div class="input-group mb-1">
@@ -95,7 +95,6 @@
                 <input type="password" id="typep" name="password" class="form-control" aria-describedby="basic-addon1" value="" placeholder="Contraseña">
                 <span class="input-group-text pointer cambpass" id="basic-addon1"><i class="far fa-eye"></i></span>
             </div>
-            @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
             
         <div class="flex flex-col mb-1">
             <select name="role" id="" class="form-control">
@@ -104,7 +103,8 @@
                 <option value="Administrador">Rol Administrador</option>
             </select>
 
-            @error('warning') <p class="text-danger text-xs pt-1" > {{$message}} </p>@enderror
+
+            
         </div>
         <div class="form-check form-switch d-none">
         <input class="form-check-input" name="remember" type="checkbox" id="rememberMe">
@@ -112,6 +112,18 @@
         </div>
         <div class="text-center">
         <button type="submit" class="btn-n btn-lg btn-n-orange btn-lg w-100 mt-4 mb-0">Iniciar Sesion <i class="fas fa-sign-in-alt ml-2"></i></button>
+        @error('nit') 
+            
+                <div class="alert alert-dark alert-dismissible fade show text-white mt-2" role="alert">
+                    <small><i class="fas fa-exclamation-triangle"></i> {{$message}}</small>
+                    <button type="button" class="btn-close" style="color: #ffff; font-size:15x;" data-bs-dismiss="alert" aria-label="Close"></button> 
+                </div>
+                <script>
+                    setTimeout(() => {
+                        $(".btn-close").click();
+                    }, 2000);
+                </script>
+                @enderror
         </div>
         </form>
         </div>
@@ -160,6 +172,14 @@
                 }
                
             }); 
+
+
+            $("#form").submit(function (e){
+                if($("#typep").val() == "" || $("#cedula").val() == ""){
+                    e.preventDefault();
+                    
+                }
+            });
         </script>
 
 @endsection

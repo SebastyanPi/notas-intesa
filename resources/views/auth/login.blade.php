@@ -86,14 +86,16 @@
             @csrf
             @method('post')
             <div class="flex flex-col mb-1">
-                <input type="email" name="email" class="form-control form-control-lg" placeholder="Correo" value="{{ old('email') ?? '' }}" aria-label="Email">
+                <input type="email" name="email" class="form-control " placeholder="Correo" value="{{ old('email') ?? '' }}" aria-label="Email">
                 @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
             </div>
 
-            <div class="flex flex-col mb-1">
-                <input type="password" name="password" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Password" value="">
-                @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
+            <div class="input-group mb-1">
+                
+                <input type="password" id="typep" name="password" class="form-control" aria-describedby="basic-addon1" value="" placeholder="Contraseña">
+                <span class="input-group-text pointer cambpass" id="basic-addon1"><i class="far fa-eye"></i></span>
             </div>
+            @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
             
         <div class="flex flex-col mb-1">
             <select name="role" id="" class="form-control">
@@ -143,6 +145,21 @@
         </section>
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></main>
 
-
+        <script>
+            var state = 'text';
+            var figure = '<i class="fas fa-eye-slash"></i>';
+            $(".cambpass").click(function(){
+                $(".cambpass").html(figure);
+                $("#typep").attr('type', state);
+                if(state == 'password'){
+                    state = 'text';
+                    figure = '<i class="far fa-eye-slash"></i>';
+                }else{
+                    state = 'password';
+                    figure = '<i class="fas fa-eye"></i>';
+                }
+               
+            }); 
+        </script>
 
 @endsection

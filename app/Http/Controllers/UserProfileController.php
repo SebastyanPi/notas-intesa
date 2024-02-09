@@ -55,7 +55,7 @@ class UserProfileController extends Controller
             'lastname' => ['required','max:255', 'min:2'],
             'email' => ['required', 'email', 'max:255','unique:users',],
             'nit' => ['required','max:15','unique:users',],
-            'password' => ['max:10', 'min:5']
+            'password' => ['max:15', 'min:5']
         ]);
 
         $parts1 = explode(' ', $request->firstname);

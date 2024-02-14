@@ -282,9 +282,9 @@ $(".table").keydown(function (e) {
 $(function() 
         {
         $('.inputkey').keyup(function(e) {
-            if(e.keyCode==37)//38 para arriba //flecha derecha 39 
+            if(e.keyCode==40)//38 para arriba //flecha derecha 39 
             mover(e,-1);
-            if(e.keyCode==39)//40 para abajo // felcha abajo 37
+            if(e.keyCode==38)//40 para abajo // felcha abajo 37
             mover(e,1);
         });
         });

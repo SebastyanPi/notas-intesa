@@ -55,6 +55,12 @@
 
               @php
                 $p++;
+                $assign = [];
+                foreach ($item->group->assign_module as $item1) {
+                  array_push($assign, $item1);
+                }
+
+                //var_dump($assign);
               @endphp
         <br>
         
@@ -97,8 +103,21 @@
                   <td colspan="6" class="border-n-line"><b>Modulo</b> {{ $row->module->name }}</td>
                 </tr>
 
-                <tr class="text-center d-none" style="height: 50%">
-                  <td colspan="6" class="border-n-line"><span class="badge text-bg-primary bg-n-orange">Docente </span> {{ $row->module->user->names() }}</td>
+                @php
+                    $found_key = array_search($row->module->id, array_column($assign, 'module_id'));
+                    //echo var_dump($found_key);
+                    if(is_int($found_key)){
+                      $modulesXassign = $assign[$found_key];
+                      $profesor = $modulesXassign->user->names();
+                    }else{
+                      $profesor = false;
+                    }
+                @endphp
+
+                <tr class="text-center @if ($profesor == false)
+                  d-none
+                @endif" style="height: 50%">
+                  <td colspan="6" class="border-n-line"><span class="badge text-bg-primary bg-n-orange">Docente </span> {{ $profesor }}</td>
                 </tr>
 
                 <tr class="text-center" style="font-size: 13px;">

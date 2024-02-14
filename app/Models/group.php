@@ -36,6 +36,11 @@ class group extends Model
         return $this->belongsTo(schedule::class);
     }
 
+    public function assign_module()
+    {
+        return $this->hasMany(assign_module::class);
+    }
+
     public function qualifications()
     {
         return $this->hasMany(qualification::class);

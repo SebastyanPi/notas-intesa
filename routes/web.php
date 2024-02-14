@@ -114,6 +114,9 @@ use App\Http\Livewire\TableComponent;
 		Route::get('student/list', [StudentController::class, 'index'])->middleware('can:student.index')->name('student.index');
 		Route::get('student/list/pdf', [StudentController::class, 'listPdf'])->middleware('can:student.index.pdf')->name('student.index.pdf');
 		Route::get('student/create', [StudentController::class, 'create'])->middleware('can:student.create')->name('student.create');
+
+
+		
 		
 		
 		//Route::get('/users-list', TableComponent::Class);

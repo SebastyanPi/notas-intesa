@@ -30,6 +30,7 @@ class group extends Model
         return $this->belongsToMany(User::class, 'group_students');
     }
 
+
     public function schedule()
     {
         return $this->belongsTo(schedule::class);

@@ -31,7 +31,7 @@
                                 
                                 {{ $group->program->name }} <span class="badge badge-sm badge-n-primary"><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
                             </h5>
-                            <small>En esta Sección puedes gestionar los programas tecnicos.</small>
+                            <small class="">En esta Sección puedes gestionar los programas tecnicos.</small>
                         </div>
 
                         <div class="line-info">
@@ -56,6 +56,37 @@
 
         @livewire('show-list-group', ["id_group" => $group->id, "group" => $group])
  
+    </div>
+
+
+    <div class="modal fade" id="exampleModalFullscreen2" tabindex="-1" aria-labelledby="exampleModalFullscreen2Label" aria-modal="true" role="dialog" >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="exampleModalFullscreen2Label"><i class="fas fa-users"></i> Asignar Docente</h1>
+            <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close" style="color: #000;">
+              <span style="font-size:30px !important;" aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="POST" action="" >
+              <div class="modal-body">
+                  <div class="my-2">
+                      <p>Nombre del Programa : <b>Tecnico Laboral {{ $group->program->name }} </b></p> 
+                      <div class="line-info mt-2">
+                      
+                          <span class=""><i class="fas fa-clock"></i>  {{  $group->schedule->name }}</span> 
+                          <span class="" ><i class="fas fa-stream"></i> Grupo: {{ $group->code }}</span>
+                      </div>
+                  </div>
+                  
+                  @livewire('assign-module', ["id_group" => $group->id, "group" => $group, "id_program" => $group->program_id])
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn-n btn-n-informative" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+          </form>
+        </div>
+      </div>
     </div>
 
 

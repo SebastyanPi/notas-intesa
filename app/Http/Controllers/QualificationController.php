@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\group;
 use App\Models\Module;
+use App\Models\assign_module;
 use App\Models\qualification;
 use App\Models\GroupStudent;
 use Illuminate\Http\Request;
@@ -21,6 +22,12 @@ class QualificationController extends Controller
     {
         $group = group::find($id);
         $module = Module::where('id', $module_id)->first();
+        $assig = assign_module::where('module_id', $module_id)->where('group_id', $id)->count();
+        if($assig > 0){
+            $assign = assign_module::where('module_id', $module_id)->where('group_id', $id)->first();
+        }else{
+            $assign = false;
+        }
         $ExistQualification = qualification::where('module_id', $module_id)->where('group_id', $id)->get();
         $EstudiantesXGrupo = GroupStudent::where('group_id',$id)->get();
         foreach ($EstudiantesXGrupo as $student) {
@@ -42,7 +49,7 @@ class QualificationController extends Controller
         }
         $qualifications = qualification::where('module_id', $module_id)->where('group_id', $id)->get();
         
-        return view('pages.group.qualification', compact('group','qualifications' ,'module' ,'module_id'));
+        return view('pages.group.qualification', compact('group','qualifications' ,'module' ,'module_id','assign'));
     }
 
     public function pdf($id, $module_id){

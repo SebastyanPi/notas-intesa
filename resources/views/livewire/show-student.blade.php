@@ -29,7 +29,7 @@
                         <td>{{ $user->firstname }} {{ $user->lastname }}</td>
                         <td class="text-center">
                             <div class="form-check text-center">
-                                <input class="form-check-input" wire:model="seleccionado" type="radio" id="exampleRadios{{ $user->id }}" value="{{ $user->id  }}">
+                                <input class="form-check-input" wire:change="seleccionado" type="radio" id="exampleRadios{{ $user->id }}" value="{{ $user->id  }}">
                             </div>
                         </td>
                     </tr>

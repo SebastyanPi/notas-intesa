@@ -80,6 +80,7 @@ class User extends Authenticatable
         return $this->hasMany(GroupStudent::class);
     }
 
+
     public function qualifications()
     {
         return $this->hasMany(qualification::class);

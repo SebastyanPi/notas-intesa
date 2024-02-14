@@ -37,7 +37,14 @@
                             <span class=""><i class="fas fa-layer-group"></i>Grupo : <b class="">{{ $group->code }}</b></span>
                             <span class="d-none"><i class="fas fa-user-graduate"></i>Numero de Matriculados :  <b class="">{{ count($group->students) }} </b></span>
                             <span class=""><i class="fas fa-book"></i>Modulo :  <b class="">{{  $module->name  }} </b></span>
-                            <span class=""><i class="fas fa-user"></i>Docente :  <b class="">{{  $module->user->names()  }} </b></span>
+                            <span class=""><i class="fas fa-user"></i>Docente :  <b class="">
+                                @if ($assign != false)
+                                    {{  $assign->user->names()  }}
+                                @else
+                                    Sin Asignar 
+                                @endif
+
+                            </b></span>
                         </div>
                  
                     </div>

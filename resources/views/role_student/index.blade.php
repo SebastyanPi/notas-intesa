@@ -41,9 +41,15 @@
 
         @php
             $p = 0;
+
+
+
         @endphp
 
-        
+
+     
+
+    
 
         @foreach (auth()->user()->group_student as $item)
 
@@ -91,7 +97,7 @@
                   <td colspan="6" class="border-n-line"><b>Modulo</b> {{ $row->module->name }}</td>
                 </tr>
 
-                <tr class="text-center" style="height: 50%">
+                <tr class="text-center d-none" style="height: 50%">
                   <td colspan="6" class="border-n-line"><span class="badge text-bg-primary bg-n-orange">Docente </span> {{ $row->module->user->names() }}</td>
                 </tr>
 

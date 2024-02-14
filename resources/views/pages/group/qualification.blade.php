@@ -182,9 +182,17 @@
             }
         }else{
             sum = j*0.50;
+           
             var camp1 =  ValidarCamp($("#camp1_"+id).val())*0.20;
             var camp2 =  ValidarCamp($("#camp2_"+id).val())*0.30;
+            //console.log("Nota 1 : " + camp1);
+            //console.log("Nota 2 : " + camp2);
+            //console.log("Nota 3 : " + sum);
+            var op = ((camp1 * 100) + (camp2 * 100) + (sum * 100))/100;
             var sum = parseFloat(sum)+parseFloat(camp1)+parseFloat(camp2);
+            //console.log("definitiva (Sin redondear) : " + sum);
+            //console.log("definitiva : " + Math.round(op*10)/10);
+         
             var k = redondeo(sum);
             $("#final_"+id).val(k);
             if(k < 3.5 || k > 5.0){
@@ -226,7 +234,7 @@
 }
 
 function redondeo(frase){
-    var frase = frase.toString();
+    /*var frase = frase.toString();
     if(frase.length > 3){
         var cadena = frase.slice(2);
         var cade = cadena[0]+"."+cadena.slice(1);
@@ -242,7 +250,9 @@ function redondeo(frase){
     }
     else{
         return frase;
-    }
+    }*/
+
+    return (Math.round(frase*10)/10);
 } 
 
 

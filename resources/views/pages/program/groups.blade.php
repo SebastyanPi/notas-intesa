@@ -49,7 +49,7 @@
                                 <th>#</th>
                                 <th>Codigo de Grupo</th>
                                 <th>Horario</th>
-                                <th>Docente Encargado</th>
+    
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -65,7 +65,6 @@
                                     <td>{{ $k }}</td>
                                     <td><span class="badge badge-sm bg-primary">{{ $group->code }}</span></td>
                                     <td>{{ $group->schedule->name }}</td>
-                                    <td><span class="badge bg-n-aquarela">{{ $group->user->firstname }} {{ $group->user->lastname  }}</span></td>
                                
                                     <td>
                                         <a class="pl-2" href="{{ route('group.edit',$group->id ) }}"><i class="fas fa-edit"></i></a>
@@ -134,7 +133,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group d-none">
                     <label for="exampleFormControlInput1">Docente</label>
                     
                     <select class="form-control" name="user_id" id="">

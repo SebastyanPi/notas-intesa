@@ -16,7 +16,7 @@
                     <span class=""><i class="fas fa-layer-group"></i>Horario : <b class="">{{ $group->schedule->name }}</b></span>
                 </div>
                 <div class="line-info mt-3">
-                    <span class=""><i class="fas fa-layer-group"></i>Docente : <b class="">{{ $group->user->names() }}</b></span>
+                    <span class="d-none"><i class="fas fa-layer-group"></i>Docente : <b class="">{{ $group->user->names() }}</b></span>
                     <span class=""><i class="fas fa-layer-group"></i>Matriculados en el Grupo : <b class="">{{ count($group->students) }}</b></span>
                 </div>
             </div>

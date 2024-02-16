@@ -54,7 +54,7 @@
                                         </select>
                                       </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 d-none">
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">Docente</span>
                                         <select name="user_id" class="form-control text-center">

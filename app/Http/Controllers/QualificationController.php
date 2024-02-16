@@ -49,7 +49,10 @@ class QualificationController extends Controller
         }
         $qualifications = qualification::where('module_id', $module_id)->where('group_id', $id)->get();
         
-        return view('pages.group.qualification', compact('group','qualifications' ,'module' ,'module_id','assign'));
+        echo "El modulo es ". $module_id;
+        echo "<br /> El grupo es ". $id;
+        echo "<br /> El profesor es ". $assign->user->names();
+        //return view('pages.group.qualification', compact('group','qualifications' ,'module' ,'module_id','assign'));
     }
 
     public function pdf($id, $module_id){

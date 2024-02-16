@@ -14,8 +14,8 @@ class AssignModule extends Component
     public $id_group, $group, $id_program, $list, $checked, $teacher, $teacherSelected = 1;
 
     public function save($module_id){
-        $itemrows = assign_module::where('module_id', $module_id)->count();
-        $item = assign_module::where('module_id', $module_id)->first();
+        $itemrows = assign_module::where('module_id', $module_id)->where('group_id',$this->id_group)->count();
+        $item = assign_module::where('module_id', $module_id)->where('group_id',$this->id_group)->first();
         if($itemrows > 0){
             $item->user_id = $this->teacherSelected;
             $item->save();
@@ -34,7 +34,7 @@ class AssignModule extends Component
         $this->checked = [];
         $this->list = Module::where('program_id', $this->id_program)->get();
         foreach ($this->list as $key) {
-           $item = assign_module::where('module_id', $key->id)->first();
+           $item = assign_module::where('module_id', $key->id)->where('group_id',$this->id_group)->first();
            if(isset($item)){
                 array_push($this->checked,[ 'module_id' => $key->id, 'user_id' => $item->user_id ]);
            }

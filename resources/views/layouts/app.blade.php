@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="./img/intesa.png">
     <link rel="icon" type="image/png" href="{{ env('APP_URL') }}img/intesa.png">
     <title>
-        Intesa - Notas
+        Campus Virtual  - INTESA
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -24,6 +24,8 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ env('APP_URL') }}assets/css/argon-dashboard.css" rel="stylesheet" />
     <link id="pagestyle" href="{{ env('APP_URL') }}assets/css/app.css" rel="stylesheet" />
+    <meta property="og:image" content="{{ $URL }}img/intesa.png">
+    <meta name="description" content="Campus Virtual INTESA - Institución tecnico laboral para el trabajo y el desarrollo humano." >
     @notifyCss
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     @livewireStyles

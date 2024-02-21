@@ -114,7 +114,7 @@ class UserProfileController extends Controller
     }
 
     public function campus_admin_formacion($nit){
-        $item = User::where('user_id', 1)->first();
+        $item = token::where('user_id', 1)->first();
         $token = $item->token;
         $domainname   = 'https://aula.institutointesa.edu.co';
         $functionname = 'auth_userkey_request_login_url';

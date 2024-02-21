@@ -70,6 +70,7 @@ use App\Http\Livewire\TableComponent;
 		Route::post('/module/{id}/destroy', [ModuleController::class, 'destroy'])->middleware('can:module.destroy')->name('module.destroy');
 
 		Route::get('/program', [ProgramController::class, 'index'])->middleware('can:program.index')->name('program.index');
+	
 		Route::post('/program/store', [ProgramController::class, 'store'])->middleware('can:program.store')->name('program.store');
 		Route::post('/program/update/{id}', [ProgramController::class, 'update'])->middleware('can:program.update')->name('program.update');
 		Route::get('/program/{id}', [ProgramController::class, 'show'])->middleware('can:program.show')->name('program.show');
@@ -92,6 +93,7 @@ use App\Http\Livewire\TableComponent;
 		Route::get('/group/{id}/{module_id}/qualification/pdf', [QualificationController::class, 'pdf'])->middleware('can:group.qualification.pdf')->name('group.qualification.pdf');
 
 		Route::get('/users-register/{before}', [UserProfileController::class, 'view'])->middleware('can:user.register')->name('user.register');
+		Route::get('/admin/campus-formacion/{nit}', [UserProfileController::class, 'campus_admin_formacion'])->middleware('can:user.register')->name('admin.campus');
 		Route::get('/users-list', [UserProfileController::class, 'list'])->middleware('can:user.list')->name('user.list');
 		Route::get('/users-edit/{id}/{before}', [UserProfileController::class, 'edit'])->middleware('can:users.edit')->name('users.edit');
 		Route::post('/users-update/{id}/', [UserProfileController::class, 'save'])->middleware('can:users.update')->name('users.update');

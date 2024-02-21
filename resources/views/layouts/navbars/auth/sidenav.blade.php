@@ -76,13 +76,13 @@
                 </a>
             </li>
 
-            <li class="nav-item d-none">
-                <a class="nav-link {{ Route::currentRouteName() == 'admin.index' ? 'active' : '' }}" href="{{ route('admin.index') }}">
+            <li class="nav-item">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.index' ? 'active' : '' }}" href="{{ route('admin.campus') }}" target="__blank" >
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-settings-gear-65 text-dark text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Administrador</span>
+                    <span  class="nav-link-text ms-1">Campus de Formación</span>
                 </a>
             </li>
 

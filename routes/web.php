@@ -95,6 +95,7 @@ use App\Http\Livewire\TableComponent;
 		Route::get('/users-list', [UserProfileController::class, 'list'])->middleware('can:user.list')->name('user.list');
 		Route::get('/users-edit/{id}/{before}', [UserProfileController::class, 'edit'])->middleware('can:users.edit')->name('users.edit');
 		Route::post('/users-update/{id}/', [UserProfileController::class, 'save'])->middleware('can:users.update')->name('users.update');
+		Route::post('/users-update/token/{id}/', [UserProfileController::class, 'token'])->middleware('can:users.update')->name('users.token');
 		Route::get('/users-delete/{id}/{before}', [UserProfileController::class, 'delete'])->middleware('can:users.delete')->name('users.delete');
 		Route::post('/users-register/store', [UserProfileController::class, 'register'])->middleware('can:users.new')->name('users.new');
 	
@@ -121,6 +122,8 @@ use App\Http\Livewire\TableComponent;
 		
 		//Route::get('/users-list', TableComponent::Class);
 	
-		Route::get('student/list/program', [StudentController::class, 'page_student'])->middleware('can:page_student.index')->name('page_student.index');
+		Route::get('campus-virtual', [StudentController::class, 'page_student'])->middleware('can:page_student.index')->name('page_student.index');
+		Route::get('campus-institucional', [StudentController::class, 'campus'])->middleware('can:page_student.index')->name('page_student02.index');
+		Route::get('campus-formacion/{cedula}', [StudentController::class, 'campus_formacion'])->middleware('can:page_student.index')->name('campus.formacion');
 	});
 

@@ -80,6 +80,7 @@
                                                             <input name="lastname" type="text" class="form-control text-center" aria-describedby="basic-addon1" value="{{ $user->lastname }}">
                                                         </div>
                                                     </div>
+                                                   
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -106,6 +107,10 @@
                                                             <span class="input-group-text" id="basic-addon1">Contraseña</span>
                                                             <input name="password" type="password" class="form-control text-center" aria-describedby="basic-addon1" value="{{ $user->password_verified_at }}">
                                                         </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <span class="" id="basic-addon1"> <small>  <b>TOKEN</b> para Acceso de Campus de Formación : </small></span>
+                                                        <span class="badge text-dark mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop00" style="background-color:#FDF619 !important;cursor: pointer;" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-star-half-alt"></i> TOKEN</span>
                                                     </div>
                                                     
                                                 </div>
@@ -193,7 +198,7 @@
                                                 <a class="btn-n btn-n-primary d-none" href="{{ route('user.list') }}"><i class="fas fa-arrow-left"></i></a>
                                                 <button type="submit" class="btn-n btn-n-primary"> <i class="fas fa-save"></i> Guardar</button>
                                                 <button type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn-n btn-n-danger"> <i class="fas fa-trash-alt"></i> Eliminar</button>
-                                     
+                              
                                         </div>
                                        
                                     </div>
@@ -290,6 +295,31 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="staticBackdrop00" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h2> <b>TOKEN</b> para Acceso de Campus de Formación</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="{{ route('users.token',['id' => $user->id, 'before' => $before]) }}" >
+                @csrf
+                <div class="modal-body">
+                    <input type="text" name="token" class="form-control" @if ($numToken > 0) value="{{ $tok->token }}" @endif >
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-n-secondary close" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn text-dark" style="background-color:#FDF619 !important;cursor: pointer;"><i class="fas fa-star-half-alt"></i> Guardar</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
     
 
     <script>

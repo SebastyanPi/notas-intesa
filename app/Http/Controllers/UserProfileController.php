@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\User;
+use App\Models\token;
 use App\Models\qualification;
 use App\Models\GroupStudent;
 use Illuminate\Support\Facades\Cache;
@@ -100,8 +101,34 @@ class UserProfileController extends Controller
 
     public function edit(Request $request){
         $user = User::where('id', $request->id)->first();
+        $tokens = token::where('user_id', $request->id)->get();
+        $numToken = $tokens->count();
         $before = $request->before;
-        return view('pages.user-edit', compact('user','before'));
+        if($numToken > 0){
+            $tok = token::where('user_id', $request->id)->first();
+            return view('pages.user-edit', compact('user','before', 'numToken', 'tok'));
+        }else{
+            return view('pages.user-edit', compact('user','before', 'numToken'));
+        }
+        
+    }
+
+    public function token(Request $request){
+        if($request->token != ""){
+            $numToken = token::where('user_id', $request->id)->count();
+            if($numToken == 1){
+                $token = token::where('user_id', $request->id)->first();
+                $token->token = $request->token;
+                $token->save();
+            }else{
+                token::create([
+                    'user_id' => $request->id,
+                    'token' => $request->token
+                ]);
+            }
+        }
+        
+        return redirect()->route('users.edit',["id" => $request->id, "before" => $request->before ]);
     }
 
     public function save(Request $request){

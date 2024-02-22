@@ -76,13 +76,20 @@
                 </a>
             </li>
 
+            <style>
+                .active-n:hover{
+                    background-color: #b4ea7b !important;
+                }
+
+            </style>
+
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'admin.index' ? 'active' : '' }}" href="{{ route('admin.campus', 77168558) }}" target="__blank" >
+                <a class="nav-link bg-primary active-n" href="{{ route('admin.campus', 77168558) }}" target="__blank" >
                     <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-settings-gear-65 text-dark text-sm opacity-10"></i>
+                        class="icon icon-shape text-white icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-home fa-lg text-white"></i>
                     </div>
-                    <span  class="nav-link-text ms-1">Campus de Formación</span>
+                    <span  class="nav-link-text ms-1 text-white">Campus de Formación</span>
                 </a>
             </li>
 

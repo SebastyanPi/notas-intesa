@@ -111,6 +111,8 @@ class LoginController extends Controller
                 case 'Profesor':
                     if(in_array('Profesor', $roles)){
 
+                        return redirect()->route('user.teacher.index');
+
                     }else{
                         Auth::logout();
                         return back()->withErrors([

@@ -19,6 +19,7 @@ class TeacherController extends Controller
         return view('pages.teacher.index');
     }
 
+
     public function listPdf(){
         date_default_timezone_set('America/Bogota');
         $teacher = User::role('Profesor')->get();
@@ -70,6 +71,12 @@ class TeacherController extends Controller
     public function edit($id)
     {
         //
+    }
+
+    public function page_teacher(){
+
+        return view('role_teacher.index');
+
     }
 
     /**

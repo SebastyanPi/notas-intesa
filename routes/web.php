@@ -126,6 +126,11 @@ use App\Http\Livewire\TableComponent;
 	
 		Route::get('campus-virtual', [StudentController::class, 'page_student'])->middleware('can:page_student.index')->name('page_student.index');
 		Route::get('campus-institucional', [StudentController::class, 'campus'])->middleware('can:page_student.index')->name('page_student02.index');
-		Route::get('campus-formacion/{cedula}', [StudentController::class, 'campus_formacion'])->middleware('can:page_student.index')->name('campus.formacion');
+		Route::get('campus-formacion/{cedula}', [StudentController::class, 'campus_formacion'])->middleware('can:page_student.index')->name('campus.formacion'); 
+
+		//teacher
+		Route::get('teacher/campus-virtual', [TeacherController::class, 'page_teacher'])->middleware('can:user.teacher.index')->name('user.teacher.index');
+		//Route::get('teacher/campus-virtual', [TeacherController::class, 'page_teacher'])->middleware('can:user.teacher.index')->name('user.teacher.index');
+
 	});
 

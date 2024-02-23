@@ -84,6 +84,11 @@ class RoleSeeder extends Seeder
         //Permisos para Estudiantes
         Permission::create(['name' => 'page_student.index'])->syncRoles([$role2]);
 
+        //Permisos para Profesor
+        Permission::create(['name' => 'user.teacher.index'])->assignRole($role3);
+        Permission::create(['name' => 'user.teacher.notas'])->assignRole($role3);
+        //Permission::create(['name' => 'user.teacher.index'])->assignRole($role3);
+
 
     }
 }

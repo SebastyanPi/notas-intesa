@@ -130,6 +130,7 @@ use App\Http\Livewire\TableComponent;
 
 		//teacher
 		Route::get('teacher/campus-virtual', [TeacherController::class, 'page_teacher'])->middleware('can:user.teacher.index')->name('user.teacher.index');
+		oute::get('teacher/campus-formacion/{cedula}', [StudentController::class, 'campus_formacion'])->middleware('can:user.teacher.index')->name('user.teacher.campus.formacion'); 
 		//Route::get('teacher/campus-virtual', [TeacherController::class, 'page_teacher'])->middleware('can:user.teacher.index')->name('user.teacher.index');
 
 	});

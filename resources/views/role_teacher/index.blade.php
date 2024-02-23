@@ -58,7 +58,7 @@
             <div class="card-footer">
               <div class="d-grid gap-2">
                 @if (count(auth()->user()->token) > 0)
-                  <a href="{{ route('campus.formacion', auth()->user()->nit) }}" class="btn btn-primary btn-block">Ingresar  <i class="fas fa-angle-double-right"></i></a>
+                  <a href="{{ route('user.teacher.campus.formacion', auth()->user()->nit) }}" class="btn btn-primary btn-block">Ingresar  <i class="fas fa-angle-double-right"></i></a>
                 @else
                   <button class="btn btn-primary btn-block" disabled >No Disponible  <i class="fas fa-angle-double-right"></i></button>
                 @endif

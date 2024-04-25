@@ -28,6 +28,11 @@
     <meta name="description" content="Campus Virtual INTESA - Institución tecnico laboral para el trabajo y el desarrollo humano." >
     @notifyCss
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link href="{{ $URL }}assets/css/all.css" rel="stylesheet">
+
+    <script src="{{ $URL }}assets/js/all.js" crossorigin="anonymous"></script>
+    
     @livewireStyles
 </head>
 

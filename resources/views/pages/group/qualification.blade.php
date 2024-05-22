@@ -161,6 +161,12 @@
             var camp3 =  ValidarCamp($("#camp3_"+id).val())*0.50;
             var sum = parseFloat(sum)+parseFloat(camp2)+parseFloat(camp3);
             var k = redondeo(sum);
+            var ConvertLetter = k.toString();
+            console.log();
+            if(ConvertLetter.length == 1){
+                k = k+".0";
+            }
+
             $("#final_"+id).val(k);
             if(k < 3.5 || k > 5.0){
                 $("#final_"+id).css('color','red');
@@ -174,6 +180,12 @@
             var camp3 =  ValidarCamp($("#camp3_"+id).val())*0.50;
             var sum = parseFloat(sum)+parseFloat(camp1)+parseFloat(camp3);
             var k = redondeo(sum);
+            var ConvertLetter = k.toString();
+            console.log();
+            if(ConvertLetter.length == 1){
+                k = k+".0";
+            }
+
             $("#final_"+id).val(k);
             if(k < 3.5 || k > 5.0){
                 $("#final_"+id).css('color','red');
@@ -194,6 +206,13 @@
             //console.log("definitiva : " + Math.round(op*10)/10);
          
             var k = redondeo(sum);
+
+            var ConvertLetter = k.toString();
+            console.log();
+            if(ConvertLetter.length == 1){
+                k = k+".0";
+            }
+            
             $("#final_"+id).val(k);
             if(k < 3.5 || k > 5.0){
                 $("#final_"+id).css('color','red');

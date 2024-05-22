@@ -61,6 +61,11 @@ class qualification extends Model
 
     public function definitive(){
         $def = ( ($this->attributes['note1']/10) * 0.2) + (($this->attributes['note2']/10)* 0.3) + (($this->attributes['note3']/10)* 0.5);
-        return round($def*10)/10;
+        $num = round($def*10)/10;
+        $i = strlen($num);
+        if($i == 1){
+            $num = $num . ".0";
+        }
+        return $num;
     }
 }
